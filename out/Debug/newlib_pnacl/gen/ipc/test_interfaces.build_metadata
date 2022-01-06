@@ -1,0 +1,8 @@
+{
+  "deps": [
+
+  ],
+  "sources": [
+    "/home/smalldragon/Workspace/new_chromium/src/ipc/ipc_test.mojom"
+  ]
+}

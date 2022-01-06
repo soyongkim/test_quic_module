@@ -1,0 +1,45 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DLIBGAV1_MAX_BITDEPTH=10 -DLIBGAV1_THREADPOOL_USE_STD_MUTEX -DLIBGAV1_ENABLE_LOGGING=0 -DLIBGAV1_PUBLIC=
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libgav1/src -I../../third_party/libgav1/src/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -std=c++17 -Wno-trigraphs -fno-aligned-new -fno-exceptions -fno-rtti -nostdinc++ -isystem../../buildtools/third_party/libc++/trunk/include -isystem../../buildtools/third_party/libc++abi/trunk/include --sysroot=../../build/linux/debian_sid_amd64-sysroot -fvisibility-inlines-hidden
+label_name = libgav1
+target_out_dir = obj/third_party/libgav1
+target_output_name = libgav1
+
+build obj/third_party/libgav1/libgav1/buffer_pool.o: cxx ../../third_party/libgav1/src/src/buffer_pool.cc
+build obj/third_party/libgav1/libgav1/decoder.o: cxx ../../third_party/libgav1/src/src/decoder.cc
+build obj/third_party/libgav1/libgav1/decoder_impl.o: cxx ../../third_party/libgav1/src/src/decoder_impl.cc
+build obj/third_party/libgav1/libgav1/decoder_settings.o: cxx ../../third_party/libgav1/src/src/decoder_settings.cc
+build obj/third_party/libgav1/libgav1/film_grain.o: cxx ../../third_party/libgav1/src/src/film_grain.cc
+build obj/third_party/libgav1/libgav1/frame_buffer.o: cxx ../../third_party/libgav1/src/src/frame_buffer.cc
+build obj/third_party/libgav1/libgav1/internal_frame_buffer_list.o: cxx ../../third_party/libgav1/src/src/internal_frame_buffer_list.cc
+build obj/third_party/libgav1/libgav1/loop_restoration_info.o: cxx ../../third_party/libgav1/src/src/loop_restoration_info.cc
+build obj/third_party/libgav1/libgav1/motion_vector.o: cxx ../../third_party/libgav1/src/src/motion_vector.cc
+build obj/third_party/libgav1/libgav1/obu_parser.o: cxx ../../third_party/libgav1/src/src/obu_parser.cc
+build obj/third_party/libgav1/libgav1/prediction_mask.o: cxx ../../third_party/libgav1/src/src/prediction_mask.cc
+build obj/third_party/libgav1/libgav1/quantizer.o: cxx ../../third_party/libgav1/src/src/quantizer.cc
+build obj/third_party/libgav1/libgav1/reconstruction.o: cxx ../../third_party/libgav1/src/src/reconstruction.cc
+build obj/third_party/libgav1/libgav1/residual_buffer_pool.o: cxx ../../third_party/libgav1/src/src/residual_buffer_pool.cc
+build obj/third_party/libgav1/libgav1/status_code.o: cxx ../../third_party/libgav1/src/src/status_code.cc
+build obj/third_party/libgav1/libgav1/symbol_decoder_context.o: cxx ../../third_party/libgav1/src/src/symbol_decoder_context.cc
+build obj/third_party/libgav1/libgav1/threading_strategy.o: cxx ../../third_party/libgav1/src/src/threading_strategy.cc
+build obj/third_party/libgav1/libgav1/version.o: cxx ../../third_party/libgav1/src/src/version.cc
+build obj/third_party/libgav1/libgav1/warp_prediction.o: cxx ../../third_party/libgav1/src/src/warp_prediction.cc
+build obj/third_party/libgav1/libgav1/yuv_buffer.o: cxx ../../third_party/libgav1/src/src/yuv_buffer.cc
+build obj/third_party/libgav1/libgav1/cdef.o: cxx ../../third_party/libgav1/src/src/post_filter/cdef.cc
+build obj/third_party/libgav1/libgav1/deblock.o: cxx ../../third_party/libgav1/src/src/post_filter/deblock.cc
+build obj/third_party/libgav1/libgav1/loop_restoration.o: cxx ../../third_party/libgav1/src/src/post_filter/loop_restoration.cc
+build obj/third_party/libgav1/libgav1/post_filter.o: cxx ../../third_party/libgav1/src/src/post_filter/post_filter.cc
+build obj/third_party/libgav1/libgav1/super_res.o: cxx ../../third_party/libgav1/src/src/post_filter/super_res.cc
+build obj/third_party/libgav1/libgav1/mode_info.o: cxx ../../third_party/libgav1/src/src/tile/bitstream/mode_info.cc
+build obj/third_party/libgav1/libgav1/palette.o: cxx ../../third_party/libgav1/src/src/tile/bitstream/palette.cc
+build obj/third_party/libgav1/libgav1/partition.o: cxx ../../third_party/libgav1/src/src/tile/bitstream/partition.cc
+build obj/third_party/libgav1/libgav1/transform_size.o: cxx ../../third_party/libgav1/src/src/tile/bitstream/transform_size.cc
+build obj/third_party/libgav1/libgav1/prediction.o: cxx ../../third_party/libgav1/src/src/tile/prediction.cc
+build obj/third_party/libgav1/libgav1/tile.o: cxx ../../third_party/libgav1/src/src/tile/tile.cc
+build obj/third_party/libgav1/libgav1/tile_scratch_buffer.o: cxx ../../third_party/libgav1/src/src/tile_scratch_buffer.cc
+
+build obj/third_party/libgav1/libgav1.a: alink obj/third_party/libgav1/libgav1/buffer_pool.o obj/third_party/libgav1/libgav1/decoder.o obj/third_party/libgav1/libgav1/decoder_impl.o obj/third_party/libgav1/libgav1/decoder_settings.o obj/third_party/libgav1/libgav1/film_grain.o obj/third_party/libgav1/libgav1/frame_buffer.o obj/third_party/libgav1/libgav1/internal_frame_buffer_list.o obj/third_party/libgav1/libgav1/loop_restoration_info.o obj/third_party/libgav1/libgav1/motion_vector.o obj/third_party/libgav1/libgav1/obu_parser.o obj/third_party/libgav1/libgav1/prediction_mask.o obj/third_party/libgav1/libgav1/quantizer.o obj/third_party/libgav1/libgav1/reconstruction.o obj/third_party/libgav1/libgav1/residual_buffer_pool.o obj/third_party/libgav1/libgav1/status_code.o obj/third_party/libgav1/libgav1/symbol_decoder_context.o obj/third_party/libgav1/libgav1/threading_strategy.o obj/third_party/libgav1/libgav1/version.o obj/third_party/libgav1/libgav1/warp_prediction.o obj/third_party/libgav1/libgav1/yuv_buffer.o obj/third_party/libgav1/libgav1/cdef.o obj/third_party/libgav1/libgav1/deblock.o obj/third_party/libgav1/libgav1/loop_restoration.o obj/third_party/libgav1/libgav1/post_filter.o obj/third_party/libgav1/libgav1/super_res.o obj/third_party/libgav1/libgav1/mode_info.o obj/third_party/libgav1/libgav1/palette.o obj/third_party/libgav1/libgav1/partition.o obj/third_party/libgav1/libgav1/transform_size.o obj/third_party/libgav1/libgav1/prediction.o obj/third_party/libgav1/libgav1/tile.o obj/third_party/libgav1/libgav1/tile_scratch_buffer.o || obj/third_party/libgav1/libgav1_dsp.stamp obj/third_party/libgav1/libgav1_utils.stamp obj/third_party/libgav1/libgav1_dsp_sse4.stamp
+  arflags = -T
+  output_extension = .a
+  output_dir = obj/third_party/libgav1

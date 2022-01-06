@@ -1,0 +1,43 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/ruy/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -std=c++17 -Wno-trigraphs -fno-aligned-new -fno-exceptions -fno-rtti -nostdinc++ -isystem../../buildtools/third_party/libc++/trunk/include -isystem../../buildtools/third_party/libc++abi/trunk/include --sysroot=../../build/linux/debian_sid_amd64-sysroot -fvisibility-inlines-hidden
+label_name = ruy
+target_out_dir = obj/third_party/ruy
+target_output_name = ruy
+
+build obj/third_party/ruy/ruy/allocator.o: cxx ../../third_party/ruy/src/ruy/allocator.cc
+build obj/third_party/ruy/ruy/apply_multiplier.o: cxx ../../third_party/ruy/src/ruy/apply_multiplier.cc
+build obj/third_party/ruy/ruy/block_map.o: cxx ../../third_party/ruy/src/ruy/block_map.cc
+build obj/third_party/ruy/ruy/blocking_counter.o: cxx ../../third_party/ruy/src/ruy/blocking_counter.cc
+build obj/third_party/ruy/ruy/context.o: cxx ../../third_party/ruy/src/ruy/context.cc
+build obj/third_party/ruy/ruy/context_get_ctx.o: cxx ../../third_party/ruy/src/ruy/context_get_ctx.cc
+build obj/third_party/ruy/ruy/cpuinfo.o: cxx ../../third_party/ruy/src/ruy/cpuinfo.cc
+build obj/third_party/ruy/ruy/ctx.o: cxx ../../third_party/ruy/src/ruy/ctx.cc
+build obj/third_party/ruy/ruy/denormal.o: cxx ../../third_party/ruy/src/ruy/denormal.cc
+build obj/third_party/ruy/ruy/frontend.o: cxx ../../third_party/ruy/src/ruy/frontend.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avx.o: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avx.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avx2_fma.o: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avx2_fma.cc
+build obj/third_party/ruy/ruy/have_built_path_for_avx512.o: cxx ../../third_party/ruy/src/ruy/have_built_path_for_avx512.cc
+build obj/third_party/ruy/ruy/kernel_arm32.o: cxx ../../third_party/ruy/src/ruy/kernel_arm32.cc
+build obj/third_party/ruy/ruy/kernel_arm64.o: cxx ../../third_party/ruy/src/ruy/kernel_arm64.cc
+build obj/third_party/ruy/ruy/kernel_avx.o: cxx ../../third_party/ruy/src/ruy/kernel_avx.cc
+build obj/third_party/ruy/ruy/kernel_avx2_fma.o: cxx ../../third_party/ruy/src/ruy/kernel_avx2_fma.cc
+build obj/third_party/ruy/ruy/kernel_avx512.o: cxx ../../third_party/ruy/src/ruy/kernel_avx512.cc
+build obj/third_party/ruy/ruy/pack_arm.o: cxx ../../third_party/ruy/src/ruy/pack_arm.cc
+build obj/third_party/ruy/ruy/pack_avx.o: cxx ../../third_party/ruy/src/ruy/pack_avx.cc
+build obj/third_party/ruy/ruy/pack_avx2_fma.o: cxx ../../third_party/ruy/src/ruy/pack_avx2_fma.cc
+build obj/third_party/ruy/ruy/pack_avx512.o: cxx ../../third_party/ruy/src/ruy/pack_avx512.cc
+build obj/third_party/ruy/ruy/pmu.o: cxx ../../third_party/ruy/src/ruy/pmu.cc
+build obj/third_party/ruy/ruy/prepacked_cache.o: cxx ../../third_party/ruy/src/ruy/prepacked_cache.cc
+build obj/third_party/ruy/ruy/prepare_packed_matrices.o: cxx ../../third_party/ruy/src/ruy/prepare_packed_matrices.cc
+build obj/third_party/ruy/ruy/instrumentation.o: cxx ../../third_party/ruy/src/ruy/profiler/instrumentation.cc
+build obj/third_party/ruy/ruy/profiler.o: cxx ../../third_party/ruy/src/ruy/profiler/profiler.cc
+build obj/third_party/ruy/ruy/treeview.o: cxx ../../third_party/ruy/src/ruy/profiler/treeview.cc
+build obj/third_party/ruy/ruy/system_aligned_alloc.o: cxx ../../third_party/ruy/src/ruy/system_aligned_alloc.cc
+build obj/third_party/ruy/ruy/thread_pool.o: cxx ../../third_party/ruy/src/ruy/thread_pool.cc
+build obj/third_party/ruy/ruy/trmul.o: cxx ../../third_party/ruy/src/ruy/trmul.cc
+build obj/third_party/ruy/ruy/tune.o: cxx ../../third_party/ruy/src/ruy/tune.cc
+build obj/third_party/ruy/ruy/wait.o: cxx ../../third_party/ruy/src/ruy/wait.cc
+
+build obj/third_party/ruy/ruy.stamp: stamp obj/third_party/ruy/ruy/allocator.o obj/third_party/ruy/ruy/apply_multiplier.o obj/third_party/ruy/ruy/block_map.o obj/third_party/ruy/ruy/blocking_counter.o obj/third_party/ruy/ruy/context.o obj/third_party/ruy/ruy/context_get_ctx.o obj/third_party/ruy/ruy/cpuinfo.o obj/third_party/ruy/ruy/ctx.o obj/third_party/ruy/ruy/denormal.o obj/third_party/ruy/ruy/frontend.o obj/third_party/ruy/ruy/have_built_path_for_avx.o obj/third_party/ruy/ruy/have_built_path_for_avx2_fma.o obj/third_party/ruy/ruy/have_built_path_for_avx512.o obj/third_party/ruy/ruy/kernel_arm32.o obj/third_party/ruy/ruy/kernel_arm64.o obj/third_party/ruy/ruy/kernel_avx.o obj/third_party/ruy/ruy/kernel_avx2_fma.o obj/third_party/ruy/ruy/kernel_avx512.o obj/third_party/ruy/ruy/pack_arm.o obj/third_party/ruy/ruy/pack_avx.o obj/third_party/ruy/ruy/pack_avx2_fma.o obj/third_party/ruy/ruy/pack_avx512.o obj/third_party/ruy/ruy/pmu.o obj/third_party/ruy/ruy/prepacked_cache.o obj/third_party/ruy/ruy/prepare_packed_matrices.o obj/third_party/ruy/ruy/instrumentation.o obj/third_party/ruy/ruy/profiler.o obj/third_party/ruy/ruy/treeview.o obj/third_party/ruy/ruy/system_aligned_alloc.o obj/third_party/ruy/ruy/thread_pool.o obj/third_party/ruy/ruy/trmul.o obj/third_party/ruy/ruy/tune.o obj/third_party/ruy/ruy/wait.o

@@ -1,0 +1,36 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DWEBP_NEAR_LOSSLESS=0 -DWEBP_DISABLE_STATS -DWEBP_REDUCE_SIZE -DWEBP_REDUCE_CSP -DWEBP_EXTERN=extern
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libwebp -I../../third_party/libwebp/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens -Wno-incompatible-pointer-types
+cflags_c = -std=c11 --sysroot=../../build/linux/debian_sid_amd64-sysroot
+label_name = libwebp_enc
+target_out_dir = obj/third_party/libwebp
+target_output_name = libwebp_enc
+
+build obj/third_party/libwebp/libwebp_enc/alpha_enc.o: cc ../../third_party/libwebp/src/enc/alpha_enc.c
+build obj/third_party/libwebp/libwebp_enc/analysis_enc.o: cc ../../third_party/libwebp/src/enc/analysis_enc.c
+build obj/third_party/libwebp/libwebp_enc/backward_references_cost_enc.o: cc ../../third_party/libwebp/src/enc/backward_references_cost_enc.c
+build obj/third_party/libwebp/libwebp_enc/backward_references_enc.o: cc ../../third_party/libwebp/src/enc/backward_references_enc.c
+build obj/third_party/libwebp/libwebp_enc/config_enc.o: cc ../../third_party/libwebp/src/enc/config_enc.c
+build obj/third_party/libwebp/libwebp_enc/cost_enc.o: cc ../../third_party/libwebp/src/enc/cost_enc.c
+build obj/third_party/libwebp/libwebp_enc/filter_enc.o: cc ../../third_party/libwebp/src/enc/filter_enc.c
+build obj/third_party/libwebp/libwebp_enc/frame_enc.o: cc ../../third_party/libwebp/src/enc/frame_enc.c
+build obj/third_party/libwebp/libwebp_enc/histogram_enc.o: cc ../../third_party/libwebp/src/enc/histogram_enc.c
+build obj/third_party/libwebp/libwebp_enc/iterator_enc.o: cc ../../third_party/libwebp/src/enc/iterator_enc.c
+build obj/third_party/libwebp/libwebp_enc/near_lossless_enc.o: cc ../../third_party/libwebp/src/enc/near_lossless_enc.c
+build obj/third_party/libwebp/libwebp_enc/picture_csp_enc.o: cc ../../third_party/libwebp/src/enc/picture_csp_enc.c
+build obj/third_party/libwebp/libwebp_enc/picture_enc.o: cc ../../third_party/libwebp/src/enc/picture_enc.c
+build obj/third_party/libwebp/libwebp_enc/picture_psnr_enc.o: cc ../../third_party/libwebp/src/enc/picture_psnr_enc.c
+build obj/third_party/libwebp/libwebp_enc/picture_rescale_enc.o: cc ../../third_party/libwebp/src/enc/picture_rescale_enc.c
+build obj/third_party/libwebp/libwebp_enc/picture_tools_enc.o: cc ../../third_party/libwebp/src/enc/picture_tools_enc.c
+build obj/third_party/libwebp/libwebp_enc/predictor_enc.o: cc ../../third_party/libwebp/src/enc/predictor_enc.c
+build obj/third_party/libwebp/libwebp_enc/quant_enc.o: cc ../../third_party/libwebp/src/enc/quant_enc.c
+build obj/third_party/libwebp/libwebp_enc/syntax_enc.o: cc ../../third_party/libwebp/src/enc/syntax_enc.c
+build obj/third_party/libwebp/libwebp_enc/token_enc.o: cc ../../third_party/libwebp/src/enc/token_enc.c
+build obj/third_party/libwebp/libwebp_enc/tree_enc.o: cc ../../third_party/libwebp/src/enc/tree_enc.c
+build obj/third_party/libwebp/libwebp_enc/vp8l_enc.o: cc ../../third_party/libwebp/src/enc/vp8l_enc.c
+build obj/third_party/libwebp/libwebp_enc/webp_enc.o: cc ../../third_party/libwebp/src/enc/webp_enc.c
+
+build obj/third_party/libwebp/libwebp_enc.a: alink obj/third_party/libwebp/libwebp_enc/alpha_enc.o obj/third_party/libwebp/libwebp_enc/analysis_enc.o obj/third_party/libwebp/libwebp_enc/backward_references_cost_enc.o obj/third_party/libwebp/libwebp_enc/backward_references_enc.o obj/third_party/libwebp/libwebp_enc/config_enc.o obj/third_party/libwebp/libwebp_enc/cost_enc.o obj/third_party/libwebp/libwebp_enc/filter_enc.o obj/third_party/libwebp/libwebp_enc/frame_enc.o obj/third_party/libwebp/libwebp_enc/histogram_enc.o obj/third_party/libwebp/libwebp_enc/iterator_enc.o obj/third_party/libwebp/libwebp_enc/near_lossless_enc.o obj/third_party/libwebp/libwebp_enc/picture_csp_enc.o obj/third_party/libwebp/libwebp_enc/picture_enc.o obj/third_party/libwebp/libwebp_enc/picture_psnr_enc.o obj/third_party/libwebp/libwebp_enc/picture_rescale_enc.o obj/third_party/libwebp/libwebp_enc/picture_tools_enc.o obj/third_party/libwebp/libwebp_enc/predictor_enc.o obj/third_party/libwebp/libwebp_enc/quant_enc.o obj/third_party/libwebp/libwebp_enc/syntax_enc.o obj/third_party/libwebp/libwebp_enc/token_enc.o obj/third_party/libwebp/libwebp_enc/tree_enc.o obj/third_party/libwebp/libwebp_enc/vp8l_enc.o obj/third_party/libwebp/libwebp_enc/webp_enc.o || obj/third_party/libwebp/libwebp_dec.a obj/third_party/libwebp/libwebp_dsp.a obj/third_party/libwebp/libwebp_utils.a obj/third_party/libwebp/libwebp_webp.stamp obj/third_party/libwebp/libwebp_dsp_sse2.a obj/third_party/libwebp/libwebp_dsp_sse41.a
+  arflags = -T
+  output_extension = .a
+  output_dir = obj/third_party/libwebp

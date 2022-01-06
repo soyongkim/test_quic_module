@@ -1,0 +1,9 @@
+{
+  "deps": [
+    "/home/smalldragon/Workspace/new_chromium/src/out/Debug/clang_newlib_x64/gen/mojo/public/interfaces/bindings/bindings.build_metadata",
+    "/home/smalldragon/Workspace/new_chromium/src/out/Debug/clang_newlib_x64/gen/mojo/public/mojom/base/base.build_metadata"
+  ],
+  "sources": [
+    "/home/smalldragon/Workspace/new_chromium/src/ipc/ipc.mojom"
+  ]
+}

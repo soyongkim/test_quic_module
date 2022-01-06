@@ -1,0 +1,4 @@
+gen/chrome/grit/enterprise_casting_resources.h
+gen/chrome/grit/enterprise_casting_resources_map.cc
+gen/chrome/grit/enterprise_casting_resources_map.h
+gen/chrome/enterprise_casting_resources.pak

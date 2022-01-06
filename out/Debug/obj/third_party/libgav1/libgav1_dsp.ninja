@@ -1,0 +1,61 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DLIBGAV1_MAX_BITDEPTH=10 -DLIBGAV1_THREADPOOL_USE_STD_MUTEX -DLIBGAV1_ENABLE_LOGGING=0 -DLIBGAV1_PUBLIC=
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libgav1/src -I../../third_party/libgav1/src/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -std=c++17 -Wno-trigraphs -fno-aligned-new -fno-exceptions -fno-rtti -nostdinc++ -isystem../../buildtools/third_party/libc++/trunk/include -isystem../../buildtools/third_party/libc++abi/trunk/include --sysroot=../../build/linux/debian_sid_amd64-sysroot -fvisibility-inlines-hidden
+label_name = libgav1_dsp
+target_out_dir = obj/third_party/libgav1
+target_output_name = libgav1_dsp
+
+build obj/third_party/libgav1/libgav1_dsp/average_blend_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/average_blend_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/cdef_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/cdef_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/convolve_10bit_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/convolve_10bit_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/convolve_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/convolve_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/distance_weighted_blend_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/distance_weighted_blend_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/film_grain_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/film_grain_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intra_edge_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intra_edge_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_cfl_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intrapred_cfl_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_directional_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intrapred_directional_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_filter_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intrapred_filter_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intrapred_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_smooth_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/intrapred_smooth_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/inverse_transform_10bit_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/inverse_transform_10bit_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/inverse_transform_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/inverse_transform_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_filter_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/loop_filter_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_restoration_10bit_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/loop_restoration_10bit_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_restoration_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/loop_restoration_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/mask_blend_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/mask_blend_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/motion_field_projection_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/motion_field_projection_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/motion_vector_search_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/motion_vector_search_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/obmc_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/obmc_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/super_res_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/super_res_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/warp_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/warp_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/weight_mask_neon.o: cxx ../../third_party/libgav1/src/src/dsp/arm/weight_mask_neon.cc
+build obj/third_party/libgav1/libgav1_dsp/average_blend.o: cxx ../../third_party/libgav1/src/src/dsp/average_blend.cc
+build obj/third_party/libgav1/libgav1_dsp/cdef.o: cxx ../../third_party/libgav1/src/src/dsp/cdef.cc
+build obj/third_party/libgav1/libgav1_dsp/constants.o: cxx ../../third_party/libgav1/src/src/dsp/constants.cc
+build obj/third_party/libgav1/libgav1_dsp/convolve.o: cxx ../../third_party/libgav1/src/src/dsp/convolve.cc
+build obj/third_party/libgav1/libgav1_dsp/distance_weighted_blend.o: cxx ../../third_party/libgav1/src/src/dsp/distance_weighted_blend.cc
+build obj/third_party/libgav1/libgav1_dsp/dsp.o: cxx ../../third_party/libgav1/src/src/dsp/dsp.cc
+build obj/third_party/libgav1/libgav1_dsp/film_grain.o: cxx ../../third_party/libgav1/src/src/dsp/film_grain.cc
+build obj/third_party/libgav1/libgav1_dsp/intra_edge.o: cxx ../../third_party/libgav1/src/src/dsp/intra_edge.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred.o: cxx ../../third_party/libgav1/src/src/dsp/intrapred.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_cfl.o: cxx ../../third_party/libgav1/src/src/dsp/intrapred_cfl.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_directional.o: cxx ../../third_party/libgav1/src/src/dsp/intrapred_directional.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_filter.o: cxx ../../third_party/libgav1/src/src/dsp/intrapred_filter.cc
+build obj/third_party/libgav1/libgav1_dsp/intrapred_smooth.o: cxx ../../third_party/libgav1/src/src/dsp/intrapred_smooth.cc
+build obj/third_party/libgav1/libgav1_dsp/inverse_transform.o: cxx ../../third_party/libgav1/src/src/dsp/inverse_transform.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_filter.o: cxx ../../third_party/libgav1/src/src/dsp/loop_filter.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_restoration.o: cxx ../../third_party/libgav1/src/src/dsp/loop_restoration.cc
+build obj/third_party/libgav1/libgav1_dsp/mask_blend.o: cxx ../../third_party/libgav1/src/src/dsp/mask_blend.cc
+build obj/third_party/libgav1/libgav1_dsp/motion_field_projection.o: cxx ../../third_party/libgav1/src/src/dsp/motion_field_projection.cc
+build obj/third_party/libgav1/libgav1_dsp/motion_vector_search.o: cxx ../../third_party/libgav1/src/src/dsp/motion_vector_search.cc
+build obj/third_party/libgav1/libgav1_dsp/obmc.o: cxx ../../third_party/libgav1/src/src/dsp/obmc.cc
+build obj/third_party/libgav1/libgav1_dsp/super_res.o: cxx ../../third_party/libgav1/src/src/dsp/super_res.cc
+build obj/third_party/libgav1/libgav1_dsp/warp.o: cxx ../../third_party/libgav1/src/src/dsp/warp.cc
+build obj/third_party/libgav1/libgav1_dsp/weight_mask.o: cxx ../../third_party/libgav1/src/src/dsp/weight_mask.cc
+build obj/third_party/libgav1/libgav1_dsp/cdef_avx2.o: cxx ../../third_party/libgav1/src/src/dsp/x86/cdef_avx2.cc
+build obj/third_party/libgav1/libgav1_dsp/convolve_avx2.o: cxx ../../third_party/libgav1/src/src/dsp/x86/convolve_avx2.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_restoration_10bit_avx2.o: cxx ../../third_party/libgav1/src/src/dsp/x86/loop_restoration_10bit_avx2.cc
+build obj/third_party/libgav1/libgav1_dsp/loop_restoration_avx2.o: cxx ../../third_party/libgav1/src/src/dsp/x86/loop_restoration_avx2.cc
+
+build obj/third_party/libgav1/libgav1_dsp.stamp: stamp obj/third_party/libgav1/libgav1_dsp/average_blend_neon.o obj/third_party/libgav1/libgav1_dsp/cdef_neon.o obj/third_party/libgav1/libgav1_dsp/convolve_10bit_neon.o obj/third_party/libgav1/libgav1_dsp/convolve_neon.o obj/third_party/libgav1/libgav1_dsp/distance_weighted_blend_neon.o obj/third_party/libgav1/libgav1_dsp/film_grain_neon.o obj/third_party/libgav1/libgav1_dsp/intra_edge_neon.o obj/third_party/libgav1/libgav1_dsp/intrapred_cfl_neon.o obj/third_party/libgav1/libgav1_dsp/intrapred_directional_neon.o obj/third_party/libgav1/libgav1_dsp/intrapred_filter_neon.o obj/third_party/libgav1/libgav1_dsp/intrapred_neon.o obj/third_party/libgav1/libgav1_dsp/intrapred_smooth_neon.o obj/third_party/libgav1/libgav1_dsp/inverse_transform_10bit_neon.o obj/third_party/libgav1/libgav1_dsp/inverse_transform_neon.o obj/third_party/libgav1/libgav1_dsp/loop_filter_neon.o obj/third_party/libgav1/libgav1_dsp/loop_restoration_10bit_neon.o obj/third_party/libgav1/libgav1_dsp/loop_restoration_neon.o obj/third_party/libgav1/libgav1_dsp/mask_blend_neon.o obj/third_party/libgav1/libgav1_dsp/motion_field_projection_neon.o obj/third_party/libgav1/libgav1_dsp/motion_vector_search_neon.o obj/third_party/libgav1/libgav1_dsp/obmc_neon.o obj/third_party/libgav1/libgav1_dsp/super_res_neon.o obj/third_party/libgav1/libgav1_dsp/warp_neon.o obj/third_party/libgav1/libgav1_dsp/weight_mask_neon.o obj/third_party/libgav1/libgav1_dsp/average_blend.o obj/third_party/libgav1/libgav1_dsp/cdef.o obj/third_party/libgav1/libgav1_dsp/constants.o obj/third_party/libgav1/libgav1_dsp/convolve.o obj/third_party/libgav1/libgav1_dsp/distance_weighted_blend.o obj/third_party/libgav1/libgav1_dsp/dsp.o obj/third_party/libgav1/libgav1_dsp/film_grain.o obj/third_party/libgav1/libgav1_dsp/intra_edge.o obj/third_party/libgav1/libgav1_dsp/intrapred.o obj/third_party/libgav1/libgav1_dsp/intrapred_cfl.o obj/third_party/libgav1/libgav1_dsp/intrapred_directional.o obj/third_party/libgav1/libgav1_dsp/intrapred_filter.o obj/third_party/libgav1/libgav1_dsp/intrapred_smooth.o obj/third_party/libgav1/libgav1_dsp/inverse_transform.o obj/third_party/libgav1/libgav1_dsp/loop_filter.o obj/third_party/libgav1/libgav1_dsp/loop_restoration.o obj/third_party/libgav1/libgav1_dsp/mask_blend.o obj/third_party/libgav1/libgav1_dsp/motion_field_projection.o obj/third_party/libgav1/libgav1_dsp/motion_vector_search.o obj/third_party/libgav1/libgav1_dsp/obmc.o obj/third_party/libgav1/libgav1_dsp/super_res.o obj/third_party/libgav1/libgav1_dsp/warp.o obj/third_party/libgav1/libgav1_dsp/weight_mask.o obj/third_party/libgav1/libgav1_dsp/cdef_avx2.o obj/third_party/libgav1/libgav1_dsp/convolve_avx2.o obj/third_party/libgav1/libgav1_dsp/loop_restoration_10bit_avx2.o obj/third_party/libgav1/libgav1_dsp/loop_restoration_avx2.o || obj/third_party/libgav1/libgav1_dsp_sse4.stamp obj/third_party/libgav1/libgav1_utils.stamp

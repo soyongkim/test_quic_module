@@ -1,0 +1,43 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/utf/src -I../../third_party/utf/src/include
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens
+cflags_c = -std=c11 --sysroot=../../build/linux/debian_sid_amd64-sysroot
+label_name = utf
+target_out_dir = obj/third_party/utf
+target_output_name = libutf
+
+build obj/third_party/utf/utf/runestrcat.o: cc ../../third_party/utf/src/runestr/runestrcat.c
+build obj/third_party/utf/utf/runestrchr.o: cc ../../third_party/utf/src/runestr/runestrchr.c
+build obj/third_party/utf/utf/runestrcmp.o: cc ../../third_party/utf/src/runestr/runestrcmp.c
+build obj/third_party/utf/utf/runestrcpy.o: cc ../../third_party/utf/src/runestr/runestrcpy.c
+build obj/third_party/utf/utf/runestrdup.o: cc ../../third_party/utf/src/runestr/runestrdup.c
+build obj/third_party/utf/utf/runestrecpy.o: cc ../../third_party/utf/src/runestr/runestrecpy.c
+build obj/third_party/utf/utf/runestrlen.o: cc ../../third_party/utf/src/runestr/runestrlen.c
+build obj/third_party/utf/utf/runestrrchr.o: cc ../../third_party/utf/src/runestr/runestrrchr.c
+build obj/third_party/utf/utf/runestrstr.o: cc ../../third_party/utf/src/runestr/runestrstr.c
+build obj/third_party/utf/utf/isalnumrune.o: cc ../../third_party/utf/src/runetype/isalnumrune.c
+build obj/third_party/utf/utf/isalpharune.o: cc ../../third_party/utf/src/runetype/isalpharune.c
+build obj/third_party/utf/utf/isblankrune.o: cc ../../third_party/utf/src/runetype/isblankrune.c
+build obj/third_party/utf/utf/iscntrlrune.o: cc ../../third_party/utf/src/runetype/iscntrlrune.c
+build obj/third_party/utf/utf/isdigitrune.o: cc ../../third_party/utf/src/runetype/isdigitrune.c
+build obj/third_party/utf/utf/isgraphrune.o: cc ../../third_party/utf/src/runetype/isgraphrune.c
+build obj/third_party/utf/utf/islowerrune.o: cc ../../third_party/utf/src/runetype/islowerrune.c
+build obj/third_party/utf/utf/isprintrune.o: cc ../../third_party/utf/src/runetype/isprintrune.c
+build obj/third_party/utf/utf/ispunctrune.o: cc ../../third_party/utf/src/runetype/ispunctrune.c
+build obj/third_party/utf/utf/isspacerune.o: cc ../../third_party/utf/src/runetype/isspacerune.c
+build obj/third_party/utf/utf/istitlerune.o: cc ../../third_party/utf/src/runetype/istitlerune.c
+build obj/third_party/utf/utf/isupperrune.o: cc ../../third_party/utf/src/runetype/isupperrune.c
+build obj/third_party/utf/utf/isvalidrune.o: cc ../../third_party/utf/src/runetype/isvalidrune.c
+build obj/third_party/utf/utf/isxdigitrune.o: cc ../../third_party/utf/src/runetype/isxdigitrune.c
+build obj/third_party/utf/utf/runetype.o: cc ../../third_party/utf/src/runetype/runetype.c
+build obj/third_party/utf/utf/utfecpy.o: cc ../../third_party/utf/src/utf/utfecpy.c
+build obj/third_party/utf/utf/utflen.o: cc ../../third_party/utf/src/utf/utflen.c
+build obj/third_party/utf/utf/utfrrune.o: cc ../../third_party/utf/src/utf/utfrrune.c
+build obj/third_party/utf/utf/utfrune.o: cc ../../third_party/utf/src/utf/utfrune.c
+build obj/third_party/utf/utf/utftab.o: cc ../../third_party/utf/src/utf/utftab.c
+build obj/third_party/utf/utf/utfutf.o: cc ../../third_party/utf/src/utf/utfutf.c
+
+build obj/third_party/utf/libutf.a: alink obj/third_party/utf/utf/runestrcat.o obj/third_party/utf/utf/runestrchr.o obj/third_party/utf/utf/runestrcmp.o obj/third_party/utf/utf/runestrcpy.o obj/third_party/utf/utf/runestrdup.o obj/third_party/utf/utf/runestrecpy.o obj/third_party/utf/utf/runestrlen.o obj/third_party/utf/utf/runestrrchr.o obj/third_party/utf/utf/runestrstr.o obj/third_party/utf/utf/isalnumrune.o obj/third_party/utf/utf/isalpharune.o obj/third_party/utf/utf/isblankrune.o obj/third_party/utf/utf/iscntrlrune.o obj/third_party/utf/utf/isdigitrune.o obj/third_party/utf/utf/isgraphrune.o obj/third_party/utf/utf/islowerrune.o obj/third_party/utf/utf/isprintrune.o obj/third_party/utf/utf/ispunctrune.o obj/third_party/utf/utf/isspacerune.o obj/third_party/utf/utf/istitlerune.o obj/third_party/utf/utf/isupperrune.o obj/third_party/utf/utf/isvalidrune.o obj/third_party/utf/utf/isxdigitrune.o obj/third_party/utf/utf/runetype.o obj/third_party/utf/utf/utfecpy.o obj/third_party/utf/utf/utflen.o obj/third_party/utf/utf/utfrrune.o obj/third_party/utf/utf/utfrune.o obj/third_party/utf/utf/utftab.o obj/third_party/utf/utf/utfutf.o || obj/third_party/utf/utf-headers.stamp
+  arflags = -T
+  output_extension = .a
+  output_dir = obj/third_party/utf

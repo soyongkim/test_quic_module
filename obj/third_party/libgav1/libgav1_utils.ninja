@@ -1,0 +1,21 @@
+defines = -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DLIBGAV1_MAX_BITDEPTH=10 -DLIBGAV1_THREADPOOL_USE_STD_MUTEX -DLIBGAV1_ENABLE_LOGGING=0 -DLIBGAV1_PUBLIC=
+include_dirs = -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libgav1/src -I../../third_party/libgav1/src/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-c++11-narrowing -Wno-unused-but-set-variable -Wno-misleading-indentation -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens
+cflags_cc = -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -std=c++17 -Wno-trigraphs -fno-aligned-new -fno-exceptions -fno-rtti -nostdinc++ -isystem../../buildtools/third_party/libc++/trunk/include -isystem../../buildtools/third_party/libc++abi/trunk/include --sysroot=../../build/linux/debian_sid_amd64-sysroot -fvisibility-inlines-hidden
+label_name = libgav1_utils
+target_out_dir = obj/third_party/libgav1
+target_output_name = libgav1_utils
+
+build obj/third_party/libgav1/libgav1_utils/bit_reader.o: cxx ../../third_party/libgav1/src/src/utils/bit_reader.cc
+build obj/third_party/libgav1/libgav1_utils/block_parameters_holder.o: cxx ../../third_party/libgav1/src/src/utils/block_parameters_holder.cc
+build obj/third_party/libgav1/libgav1_utils/constants.o: cxx ../../third_party/libgav1/src/src/utils/constants.cc
+build obj/third_party/libgav1/libgav1_utils/cpu.o: cxx ../../third_party/libgav1/src/src/utils/cpu.cc
+build obj/third_party/libgav1/libgav1_utils/entropy_decoder.o: cxx ../../third_party/libgav1/src/src/utils/entropy_decoder.cc
+build obj/third_party/libgav1/libgav1_utils/executor.o: cxx ../../third_party/libgav1/src/src/utils/executor.cc
+build obj/third_party/libgav1/libgav1_utils/logging.o: cxx ../../third_party/libgav1/src/src/utils/logging.cc
+build obj/third_party/libgav1/libgav1_utils/raw_bit_reader.o: cxx ../../third_party/libgav1/src/src/utils/raw_bit_reader.cc
+build obj/third_party/libgav1/libgav1_utils/segmentation.o: cxx ../../third_party/libgav1/src/src/utils/segmentation.cc
+build obj/third_party/libgav1/libgav1_utils/segmentation_map.o: cxx ../../third_party/libgav1/src/src/utils/segmentation_map.cc
+build obj/third_party/libgav1/libgav1_utils/threadpool.o: cxx ../../third_party/libgav1/src/src/utils/threadpool.cc
+
+build obj/third_party/libgav1/libgav1_utils.stamp: stamp obj/third_party/libgav1/libgav1_utils/bit_reader.o obj/third_party/libgav1/libgav1_utils/block_parameters_holder.o obj/third_party/libgav1/libgav1_utils/constants.o obj/third_party/libgav1/libgav1_utils/cpu.o obj/third_party/libgav1/libgav1_utils/entropy_decoder.o obj/third_party/libgav1/libgav1_utils/executor.o obj/third_party/libgav1/libgav1_utils/logging.o obj/third_party/libgav1/libgav1_utils/raw_bit_reader.o obj/third_party/libgav1/libgav1_utils/segmentation.o obj/third_party/libgav1/libgav1_utils/segmentation_map.o obj/third_party/libgav1/libgav1_utils/threadpool.o

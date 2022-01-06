@@ -1,0 +1,74 @@
+defines = -DJPEGXL_MAJOR_VERSION=0 -DJPEGXL_MINOR_VERSION=6 -DJPEGXL_PATCH_VERSION=1 -DJPEGXL_ENABLE_SKCMS=1 -DJPEGXL_ENABLE_TRANSCODE_JPEG=0 -DDCHECK_ALWAYS_ON=1 -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_OZONE=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"llvmorg-14-init-12719-gc4b45eeb-1\" -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -DCOMPONENT_BUILD -D_LIBCPP_ABI_UNSTABLE -D_LIBCPP_ABI_VERSION=Cr -D_LIBCPP_ENABLE_NODISCARD -D_LIBCPP_DEBUG=0 -DCR_LIBCXX_REVISION=79a2e924d96e2fc1e4b937c42efd08898fa472d7 -DCR_SYSROOT_HASH=fb061d85160a65abc57e4459896aa225cfd8c86f -D_DEBUG -DDYNAMIC_ANNOTATIONS_ENABLED=1
+include_dirs = -I../../third_party/libjxl/src -I../../third_party/skia/include/third_party/skcms -I../.. -Igen -I../../buildtools/third_party/libc++ -I../../third_party/libjxl/src/lib/include -I../../third_party/libjxl/gen_headers -I../../third_party/brotli/include -I../../third_party/highway/src
+cflags = -fno-delete-null-pointer-checks -fno-ident -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -mllvm -instcombine-lower-dbg-declare=0 -ffp-contract=off -fcomplete-member-pointers -m64 -march=x86-64 -msse3 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -ffile-compilation-dir=. -no-canonical-prefixes -Wall -Werror -Wextra -Wimplicit-fallthrough -Wunreachable-code-aggressive -Wthread-safety -Wextra-semi -Wno-missing-field-initializers -Wno-unused-parameter -Wloop-analysis -Wno-unneeded-internal-declaration -Wenum-compare-conditional -Wno-psabi -Wno-ignored-pragma-optimize -Wmax-tokens -Wshadow -O0 -fno-omit-frame-pointer -g2 -gdwarf-aranges -gsplit-dwarf -ggnu-pubnames -Xclang -fuse-ctor-homing -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang raw-ptr-template-as-trivial-member -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare
+cflags_cc = -Wno-shadow -Wno-unused-function -Wno-undefined-bool-conversion -Wno-tautological-undefined-compare -std=c++17 -Wno-trigraphs -fno-aligned-new -fno-exceptions -fno-rtti -nostdinc++ -isystem../../buildtools/third_party/libc++/trunk/include -isystem../../buildtools/third_party/libc++abi/trunk/include --sysroot=../../build/linux/debian_sid_amd64-sysroot -fvisibility-inlines-hidden
+label_name = libjxl
+target_out_dir = obj/third_party/libjxl
+target_output_name = libjxl
+
+build obj/third_party/libjxl/libjxl/ac_strategy.o: cxx ../../third_party/libjxl/src/lib/jxl/ac_strategy.cc
+build obj/third_party/libjxl/libjxl/alpha.o: cxx ../../third_party/libjxl/src/lib/jxl/alpha.cc
+build obj/third_party/libjxl/libjxl/ans_common.o: cxx ../../third_party/libjxl/src/lib/jxl/ans_common.cc
+build obj/third_party/libjxl/libjxl/aux_out.o: cxx ../../third_party/libjxl/src/lib/jxl/aux_out.cc
+build obj/third_party/libjxl/libjxl/cache_aligned.o: cxx ../../third_party/libjxl/src/lib/jxl/base/cache_aligned.cc
+build obj/third_party/libjxl/libjxl/data_parallel.o: cxx ../../third_party/libjxl/src/lib/jxl/base/data_parallel.cc
+build obj/third_party/libjxl/libjxl/descriptive_statistics.o: cxx ../../third_party/libjxl/src/lib/jxl/base/descriptive_statistics.cc
+build obj/third_party/libjxl/libjxl/padded_bytes.o: cxx ../../third_party/libjxl/src/lib/jxl/base/padded_bytes.cc
+build obj/third_party/libjxl/libjxl/status.o: cxx ../../third_party/libjxl/src/lib/jxl/base/status.cc
+build obj/third_party/libjxl/libjxl/blending.o: cxx ../../third_party/libjxl/src/lib/jxl/blending.cc
+build obj/third_party/libjxl/libjxl/chroma_from_luma.o: cxx ../../third_party/libjxl/src/lib/jxl/chroma_from_luma.cc
+build obj/third_party/libjxl/libjxl/coeff_order.o: cxx ../../third_party/libjxl/src/lib/jxl/coeff_order.cc
+build obj/third_party/libjxl/libjxl/color_encoding_internal.o: cxx ../../third_party/libjxl/src/lib/jxl/color_encoding_internal.cc
+build obj/third_party/libjxl/libjxl/color_management.o: cxx ../../third_party/libjxl/src/lib/jxl/color_management.cc
+build obj/third_party/libjxl/libjxl/compressed_dc.o: cxx ../../third_party/libjxl/src/lib/jxl/compressed_dc.cc
+build obj/third_party/libjxl/libjxl/convolve.o: cxx ../../third_party/libjxl/src/lib/jxl/convolve.cc
+build obj/third_party/libjxl/libjxl/dct_scales.o: cxx ../../third_party/libjxl/src/lib/jxl/dct_scales.cc
+build obj/third_party/libjxl/libjxl/dec_ans.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_ans.cc
+build obj/third_party/libjxl/libjxl/dec_cache.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_cache.cc
+build obj/third_party/libjxl/libjxl/dec_context_map.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_context_map.cc
+build obj/third_party/libjxl/libjxl/dec_external_image.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_external_image.cc
+build obj/third_party/libjxl/libjxl/dec_frame.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_frame.cc
+build obj/third_party/libjxl/libjxl/dec_group.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_group.cc
+build obj/third_party/libjxl/libjxl/dec_group_border.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_group_border.cc
+build obj/third_party/libjxl/libjxl/dec_huffman.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_huffman.cc
+build obj/third_party/libjxl/libjxl/dec_modular.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_modular.cc
+build obj/third_party/libjxl/libjxl/dec_noise.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_noise.cc
+build obj/third_party/libjxl/libjxl/dec_patch_dictionary.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_patch_dictionary.cc
+build obj/third_party/libjxl/libjxl/dec_reconstruct.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_reconstruct.cc
+build obj/third_party/libjxl/libjxl/dec_upsample.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_upsample.cc
+build obj/third_party/libjxl/libjxl/dec_xyb.o: cxx ../../third_party/libjxl/src/lib/jxl/dec_xyb.cc
+build obj/third_party/libjxl/libjxl/decode.o: cxx ../../third_party/libjxl/src/lib/jxl/decode.cc
+build obj/third_party/libjxl/libjxl/decode_to_jpeg.o: cxx ../../third_party/libjxl/src/lib/jxl/decode_to_jpeg.cc
+build obj/third_party/libjxl/libjxl/enc_bit_writer.o: cxx ../../third_party/libjxl/src/lib/jxl/enc_bit_writer.cc
+build obj/third_party/libjxl/libjxl/entropy_coder.o: cxx ../../third_party/libjxl/src/lib/jxl/entropy_coder.cc
+build obj/third_party/libjxl/libjxl/epf.o: cxx ../../third_party/libjxl/src/lib/jxl/epf.cc
+build obj/third_party/libjxl/libjxl/fields.o: cxx ../../third_party/libjxl/src/lib/jxl/fields.cc
+build obj/third_party/libjxl/libjxl/filters.o: cxx ../../third_party/libjxl/src/lib/jxl/filters.cc
+build obj/third_party/libjxl/libjxl/frame_header.o: cxx ../../third_party/libjxl/src/lib/jxl/frame_header.cc
+build obj/third_party/libjxl/libjxl/gauss_blur.o: cxx ../../third_party/libjxl/src/lib/jxl/gauss_blur.cc
+build obj/third_party/libjxl/libjxl/headers.o: cxx ../../third_party/libjxl/src/lib/jxl/headers.cc
+build obj/third_party/libjxl/libjxl/huffman_table.o: cxx ../../third_party/libjxl/src/lib/jxl/huffman_table.cc
+build obj/third_party/libjxl/libjxl/icc_codec.o: cxx ../../third_party/libjxl/src/lib/jxl/icc_codec.cc
+build obj/third_party/libjxl/libjxl/icc_codec_common.o: cxx ../../third_party/libjxl/src/lib/jxl/icc_codec_common.cc
+build obj/third_party/libjxl/libjxl/image.o: cxx ../../third_party/libjxl/src/lib/jxl/image.cc
+build obj/third_party/libjxl/libjxl/image_bundle.o: cxx ../../third_party/libjxl/src/lib/jxl/image_bundle.cc
+build obj/third_party/libjxl/libjxl/image_metadata.o: cxx ../../third_party/libjxl/src/lib/jxl/image_metadata.cc
+build obj/third_party/libjxl/libjxl/dec_jpeg_data.o: cxx ../../third_party/libjxl/src/lib/jxl/jpeg/dec_jpeg_data.cc
+build obj/third_party/libjxl/libjxl/dec_jpeg_data_writer.o: cxx ../../third_party/libjxl/src/lib/jxl/jpeg/dec_jpeg_data_writer.cc
+build obj/third_party/libjxl/libjxl/jpeg_data.o: cxx ../../third_party/libjxl/src/lib/jxl/jpeg/jpeg_data.cc
+build obj/third_party/libjxl/libjxl/loop_filter.o: cxx ../../third_party/libjxl/src/lib/jxl/loop_filter.cc
+build obj/third_party/libjxl/libjxl/luminance.o: cxx ../../third_party/libjxl/src/lib/jxl/luminance.cc
+build obj/third_party/libjxl/libjxl/memory_manager_internal.o: cxx ../../third_party/libjxl/src/lib/jxl/memory_manager_internal.cc
+build obj/third_party/libjxl/libjxl/dec_ma.o: cxx ../../third_party/libjxl/src/lib/jxl/modular/encoding/dec_ma.cc
+build obj/third_party/libjxl/libjxl/encoding.o: cxx ../../third_party/libjxl/src/lib/jxl/modular/encoding/encoding.cc
+build obj/third_party/libjxl/libjxl/modular_image.o: cxx ../../third_party/libjxl/src/lib/jxl/modular/modular_image.cc
+build obj/third_party/libjxl/libjxl/squeeze.o: cxx ../../third_party/libjxl/src/lib/jxl/modular/transform/squeeze.cc
+build obj/third_party/libjxl/libjxl/transform.o: cxx ../../third_party/libjxl/src/lib/jxl/modular/transform/transform.cc
+build obj/third_party/libjxl/libjxl/opsin_params.o: cxx ../../third_party/libjxl/src/lib/jxl/opsin_params.cc
+build obj/third_party/libjxl/libjxl/passes_state.o: cxx ../../third_party/libjxl/src/lib/jxl/passes_state.cc
+build obj/third_party/libjxl/libjxl/quant_weights.o: cxx ../../third_party/libjxl/src/lib/jxl/quant_weights.cc
+build obj/third_party/libjxl/libjxl/quantizer.o: cxx ../../third_party/libjxl/src/lib/jxl/quantizer.cc
+build obj/third_party/libjxl/libjxl/splines.o: cxx ../../third_party/libjxl/src/lib/jxl/splines.cc
+build obj/third_party/libjxl/libjxl/toc.o: cxx ../../third_party/libjxl/src/lib/jxl/toc.cc
+
+build obj/third_party/libjxl/libjxl.stamp: stamp obj/third_party/libjxl/libjxl/ac_strategy.o obj/third_party/libjxl/libjxl/alpha.o obj/third_party/libjxl/libjxl/ans_common.o obj/third_party/libjxl/libjxl/aux_out.o obj/third_party/libjxl/libjxl/cache_aligned.o obj/third_party/libjxl/libjxl/data_parallel.o obj/third_party/libjxl/libjxl/descriptive_statistics.o obj/third_party/libjxl/libjxl/padded_bytes.o obj/third_party/libjxl/libjxl/status.o obj/third_party/libjxl/libjxl/blending.o obj/third_party/libjxl/libjxl/chroma_from_luma.o obj/third_party/libjxl/libjxl/coeff_order.o obj/third_party/libjxl/libjxl/color_encoding_internal.o obj/third_party/libjxl/libjxl/color_management.o obj/third_party/libjxl/libjxl/compressed_dc.o obj/third_party/libjxl/libjxl/convolve.o obj/third_party/libjxl/libjxl/dct_scales.o obj/third_party/libjxl/libjxl/dec_ans.o obj/third_party/libjxl/libjxl/dec_cache.o obj/third_party/libjxl/libjxl/dec_context_map.o obj/third_party/libjxl/libjxl/dec_external_image.o obj/third_party/libjxl/libjxl/dec_frame.o obj/third_party/libjxl/libjxl/dec_group.o obj/third_party/libjxl/libjxl/dec_group_border.o obj/third_party/libjxl/libjxl/dec_huffman.o obj/third_party/libjxl/libjxl/dec_modular.o obj/third_party/libjxl/libjxl/dec_noise.o obj/third_party/libjxl/libjxl/dec_patch_dictionary.o obj/third_party/libjxl/libjxl/dec_reconstruct.o obj/third_party/libjxl/libjxl/dec_upsample.o obj/third_party/libjxl/libjxl/dec_xyb.o obj/third_party/libjxl/libjxl/decode.o obj/third_party/libjxl/libjxl/decode_to_jpeg.o obj/third_party/libjxl/libjxl/enc_bit_writer.o obj/third_party/libjxl/libjxl/entropy_coder.o obj/third_party/libjxl/libjxl/epf.o obj/third_party/libjxl/libjxl/fields.o obj/third_party/libjxl/libjxl/filters.o obj/third_party/libjxl/libjxl/frame_header.o obj/third_party/libjxl/libjxl/gauss_blur.o obj/third_party/libjxl/libjxl/headers.o obj/third_party/libjxl/libjxl/huffman_table.o obj/third_party/libjxl/libjxl/icc_codec.o obj/third_party/libjxl/libjxl/icc_codec_common.o obj/third_party/libjxl/libjxl/image.o obj/third_party/libjxl/libjxl/image_bundle.o obj/third_party/libjxl/libjxl/image_metadata.o obj/third_party/libjxl/libjxl/dec_jpeg_data.o obj/third_party/libjxl/libjxl/dec_jpeg_data_writer.o obj/third_party/libjxl/libjxl/jpeg_data.o obj/third_party/libjxl/libjxl/loop_filter.o obj/third_party/libjxl/libjxl/luminance.o obj/third_party/libjxl/libjxl/memory_manager_internal.o obj/third_party/libjxl/libjxl/dec_ma.o obj/third_party/libjxl/libjxl/encoding.o obj/third_party/libjxl/libjxl/modular_image.o obj/third_party/libjxl/libjxl/squeeze.o obj/third_party/libjxl/libjxl/transform.o obj/third_party/libjxl/libjxl/opsin_params.o obj/third_party/libjxl/libjxl/passes_state.o obj/third_party/libjxl/libjxl/quant_weights.o obj/third_party/libjxl/libjxl/quantizer.o obj/third_party/libjxl/libjxl/splines.o obj/third_party/libjxl/libjxl/toc.o || obj/skia/skcms.stamp obj/third_party/brotli/libdec.a obj/third_party/highway/libhwy.stamp obj/third_party/brotli/headers.stamp obj/third_party/brotli/libcommon.a

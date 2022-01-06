@@ -1,0 +1,49 @@
+<style include="cr-shared-style">
+  .button-image {
+    margin-inline-end: 8px;
+  }
+
+  .center {
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  .text-button:not(:focus) {
+    border: none;
+    box-shadow: none;
+  }
+
+  .text-button:hover {
+    background-color: transparent;
+  }
+
+  #button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 32px 0;
+  }
+</style>
+<h1>$i18n{dialogTitle}</h1>
+<div id="codeInputView">
+  <c2c-code-input length="6" value="" id="codeInput"></c2c-code-input>
+  <cr-button on-click="switchToQrInput" class="center text-button">
+    <iron-icon class="button-image" icon="cr:videocam"></iron-icon>
+    $i18n{useCamera}
+  </cr-button>
+</div>
+<div id="qrInputView">
+  <p>Camera input view</p>
+</div>
+<c2c-error-message id="errorMessage"></c2c-error-message>
+<div id="button-container">
+  <cr-button on-click="close">$i18n{close}</cr-button>
+  <cr-button id="castButton" on-click="addSinkAndCast" class="action-button"
+    disabled="[[castButtonDisabled(accessCode)]]">
+    $i18n{cast}
+  </cr-button>
+  <cr-button id="backButton" on-click="switchToCodeInput"
+    class="action-button">
+    $i18n{back}
+  </cr-button>
+</div>

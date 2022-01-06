@@ -1,0 +1,4 @@
+gen/chrome/grit/nearby_internals_resources.h
+gen/chrome/grit/nearby_internals_resources_map.cc
+gen/chrome/grit/nearby_internals_resources_map.h
+gen/chrome/nearby_internals_resources.pak
